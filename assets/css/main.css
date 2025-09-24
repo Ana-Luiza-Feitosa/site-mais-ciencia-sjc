@@ -407,6 +407,17 @@ html, body { height: 100%; margin: 0; }
     line-height: 1.6;
 }
 
+.hero-referencia{
+     font-size: var(--fs-8);
+    color: var(--roman-silver);
+    line-height: 1.4;
+}
+
+.hero-referencia a:hover {
+    color: var(--emerald);
+    font-weight: bold;
+    transform: translateY(-0.5px);
+}
 .hero-right {
     display: flex;
     flex-direction: column;
@@ -462,12 +473,16 @@ html, body { height: 100%; margin: 0; }
     justify-content: center;
 }
 
-.parceiros-titulo{
-   color: var(--black);
-    font-weight: 600;
-    margin-bottom: 2rem;
-    letter-spacing: 1px;
+.parceiros-titulo {
+   color: var(--emerald);
+   font-weight: 600;
+   margin-bottom: 2rem;
+   letter-spacing: 1px;
+   text-align: center;
+   font-size: 25px;
 }
+
+
 parceiros-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -481,7 +496,9 @@ parceiros-container {
     gap: 2rem;
     align-items: center;
     justify-items: center;
+    padding: 0 2rem;
 }
+
 
 .parceiro-logo {
     display: flex;
@@ -492,6 +509,8 @@ parceiros-container {
     transition: all 0.3s ease;
     width: 100%;
     min-height: 80px;
+    background-color: var(--white_25);
+    border-radius: 50px;
 }
 
 .parceiro-logo:hover {
@@ -656,6 +675,8 @@ parceiros-container {
 
     .parceiros-grid{
         grid-template-columns: repeat(2, 1fr);
+        padding: 0 1rem;
+
     }
 
     .parceiros-container{
@@ -730,7 +751,7 @@ parceiros-container {
 
 /* EQUIPE*/
 .team-header {
-    background:  var(--black_90);
+    background:  var(--emerald);
     padding: 6rem 0 4rem;
     text-align: center;
     color: white;
@@ -745,7 +766,7 @@ parceiros-container {
 
 .page-subtitle {
     font-size: 1.2rem;
-    color: var(--battleship-gray);
+    color: var(--white_50);
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
@@ -790,7 +811,7 @@ parceiros-container {
 }
 
 .member-name {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: var(--eerie-black);
     margin-bottom: 0.5rem;
@@ -807,13 +828,13 @@ parceiros-container {
     color: var(--sonic-silver);
     line-height: 1.6;
     margin-bottom: 1.5rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .member-contact p {
     margin-bottom: 0.5rem;
     color: var(--onyx);
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;

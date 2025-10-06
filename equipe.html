@@ -43,20 +43,25 @@
                         <li>
                             <a href="index.html" class="navbar-link">Início</a>
                         </li>
+                        
                         <li>
-                            <a href="equipe.html" class="navbar-link active">Equipe</a>
+                            <a href="agenda.html" class="navbar-link">Agenda</a>
                         </li>
+
                         <li>
-                            <a href="index.html" class="navbar-link">Eventos</a>
+                            <a href="eventos.html" class="navbar-link">Eventos</a>
                         </li>
+
                         <li>
-                            <a href="index.html" class="navbar-link">Recursos</a>
+                            <a href="https://drive.google.com/drive/folders/1B9byN7bWkLxWpOd9EuPeVwH3V4CEs85n?usp=sharing" class="navbar-link" target="_blank">Recursos</a>
                         </li>
-                        <li>
-                            <a href="index.html" class="navbar-link">Agenda</a>
-                        </li>
+
                         <li>
                             <a href="https://maiscienciasjc.blogspot.com/" class="navbar-link" target="_blank">Blog</a>
+                        </li>
+
+                        <li>
+                            <a href="equipe.html" class="navbar-link">Equipe</a>
                         </li>
                     </ul>
                 </nav>
@@ -100,10 +105,22 @@
                 <div class="container">
                     <h1 class="page-title">Equipe</h1>
                     <p class="page-subtitle">
-                        Algum texto de apoio aqui.
+                        Aqui você encontra todos os colaboradores envolvidos no +CiênciaSJC.
                     </p>
                 </div>
+        
             </section>
+            <br>
+                    <div class="team-filters" role="group" aria-label="Filtrar por time">
+                        <button class="filter-btn is-active" data-filter="*" aria-pressed="true">Todos</button>
+                        <button class="filter-btn" data-filter="coordenacao" aria-pressed="false">Coordenação</button>
+                        <button class="filter-btn" data-filter="parceiros" aria-pressed="false">Parceiros</button>
+                        <button class="filter-btn" data-filter="graduandos-bolsistas" aria-pressed="false">Graduandos IEX</button>
+                        <button class="filter-btn" data-filter="escolas-estaduais" aria-pressed="false">Escolas Estaduais</button>
+                        <button class="filter-btn" data-filter="escolas-municipais" aria-pressed="false">Escolas Municipais</button>
+                    </div>
+
+                
 
             <!-- TEAM MEMBERS -->
             <section class="team-section">
@@ -111,130 +128,250 @@
                     <div class="team-grid">
                         
                         <!-- Membro 1 -->
-                        <div class="team-member">
+                        <div class="team-member" data-team="coordenacao">
                             <div class="member-photo">
                                 <img src="/image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
                             </div>
                             <div class="member-info">
-                                <h3 class="member-name">Nome Sobrenome</h3>
+                                <h3 class="member-name">Elton Oliveira Ferreira</h3>
                                 <p class="member-role">Coordenador Geral</p>
                                 <p class="member-description">
-                                    Descrição de responsabilidades atribuídas dentro do +CiênciaNaEscola.
+                                    Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - IFSP
                                 </p>
                                 <div class="member-contact">
-                                    <p><i class="fas fa-envelope"></i> nome_sobrenome@email.com.br</p>
                                     <div class="member-social">
-                                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                        <a href="http://lattes.cnpq.br/" target="_blank"><i class="ai ai-lattes ai-3x"></i></a>
+                                        <a href="mailto:elton.ferreira@ifsp.edu.br" target="_blank"><i class="fas fa-envelope"></i></a>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Membro 2 -->
-                         <div class="team-member">
+                         <div class="team-member" data-team="coordenacao">
                             <div class="member-photo">
-                                <img src="/image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
+                                <img src="./image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
                             </div>
                             <div class="member-info">
-                                <h3 class="member-name">Nome Sobrenome</h3>
+                                <h3 class="member-name">Prof. Fabio Crocco</h3>
                                 <p class="member-role">Coordenador Geral</p>
                                 <p class="member-description">
-                                    Descrição de responsabilidades atribuídas dentro do +CiênciaNaEscola.
+                                    Instituto Tecnológico de Aeronáutica - ITA
                                 </p>
                                 <div class="member-contact">
-                                    <p><i class="fas fa-envelope"></i> nome_sobrenome@email.com.br</p>
                                     <div class="member-social">
-                                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                        <a href="http://lattes.cnpq.br/" target="_blank"><i class="ai ai-lattes ai-3x"></i></a>
+                                        <a href="mailto:crocco@ita.br" target="_blank"><i class="fas fa-envelope"></i></a>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Membro 3 -->
-                         <div class="team-member">
+                         <div class="team-member" data-team="coordenacao">
                             <div class="member-photo">
                                 <img src="/image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
                             </div>
                             <div class="member-info">
-                                <h3 class="member-name">Nome Sobrenome</h3>
+                                <h3 class="member-name">Prof. Arlindo Flavio da Conceição
+</h3>
                                 <p class="member-role">Coordenador Geral</p>
-                                <p class="member-description">
-                                    Descrição de responsabilidades atribuídas dentro do +CiênciaNaEscola.
+                                <p class="member-description">Univerisade Federal de São Paulo - UNIFESP
                                 </p>
                                 <div class="member-contact">
-                                    <p><i class="fas fa-envelope"></i> nome_sobrenome@email.com.br</p>
                                     <div class="member-social">
-                                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                        <a href="http://lattes.cnpq.br/" target="_blank"><i class="ai ai-lattes ai-3x"></i></a>
+                                        <a href="mailto:arlindo.conceicao@unifesp.br " target="_blank"><i class="fas fa-envelope"></i></a>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Membro 4 -->
-                         <div class="team-member">
-                            <div class="member-photo">
-                                <img src="/image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
-                            </div>
-                            <div class="member-info">
-                                <h3 class="member-name">Nome Sobrenome</h3>
-                                <p class="member-role">Coordenador Geral</p>
-                                <p class="member-description">
-                                    Descrição de responsabilidades atribuídas dentro do +CiênciaNaEscola.
-                                </p>
-                                <div class="member-contact">
-                                    <p><i class="fas fa-envelope"></i> nome_sobrenome@email.com.br</p>
-                                    <div class="member-social">
-                                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                        <a href="http://lattes.cnpq.br/" target="_blank"><i class="ai ai-lattes ai-3x"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Membro 5 -->
-                         <div class="team-member">
-                            <div class="member-photo">
-                                <img src="/image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
-                            </div>
-                            <div class="member-info">
-                                <h3 class="member-name">Nome Sobrenome</h3>
-                                <p class="member-role">Coordenador Geral</p>
-                                <p class="member-description">
-                                    Descrição de responsabilidades atribuídas dentro do +CiênciaNaEscola.
-                                </p>
-                                <div class="member-contact">
-                                    <p><i class="fas fa-envelope"></i> nome_sobrenome@email.com.br</p>
-                                    <div class="member-social">
-                                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                        <a href="http://lattes.cnpq.br/" target="_blank"><i class="ai ai-lattes ai-3x"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Membro 6 -->
-                        <div class="team-member">
+                        <div class="team-member" data-team="graduandos-bolsistas">
                             <div class="member-photo">
                                 <img src="./image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
                             </div>
                             <div class="member-info">
-                                <h3 class="member-name">Nome Sobrenome</h3>
-                                <p class="member-role">Coordenador Geral</p>
+                                <h3 class="member-name">Ana Luiza Antonio Feitosa</h3>
+                                <p class="member-role">Graduando Bolsista IEX</p>
                                 <p class="member-description">
-                                    Descrição de responsabilidades atribuídas dentro do +CiênciaNaEscola.
+                                    Univerisade Federal de São Paulo - UNIFESP
                                 </p>
                                 <div class="member-contact">
-                                    <p><i class="fas fa-envelope"></i> nome_sobrenome@email.com.br</p>
                                     <div class="member-social">
-                                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                        <a href="http://lattes.cnpq.br/" target="_blank"><i class="ai ai-lattes ai-3x"></i></a>
+                                        <a href="mailto:ana.feitosa@unifesp.br" target="_blank"><i class="fas fa-envelope"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        
+                        <!-- Membro 5 -->
+                         <div class="team-member" data-team="graduandos-bolsistas">
+                            <div class="member-photo">
+                                <img src="./image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">Beatriz Pereira</h3>
+                                <p class="member-role">Graduando Bolsista IEX</p>
+                                <p class="member-description">
+                                    Univerisade Federal de São Paulo - UNIFESP
+                                </p>
+                                <div class="member-contact">
+                                    <div class="member-social">
+                                        <a href="mailto:beatriz.pereira09@unifesp.br" target="_blank"><i class="fas fa-envelope"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <!-- Membro 6 -->
+                        <div class="team-member" data-team="graduandos-bolsistas">
+                            <div class="member-photo">
+                                <img src="./image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">Estevan Santos</h3>
+                                <p class="member-role">Graduando Bolsista IEX</p>
+                                <p class="member-description">
+                                    Univerisade Federal de São Paulo - UNIFESP
+                                </p>
+                                <div class="member-contact">
+                                    <div class="member-social">
+                                        <a href="mailto:estevan.santos@unifesp.br" target="_blank"><i class="fas fa-envelope"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <!-- Membro 7 -->
+                        <div class="team-member" data-team="graduandos-bolsistas">
+                            <div class="member-photo">
+                                <img src="./image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">Leticia Franca</h3>
+                                <p class="member-role">Graduando Bolsista IEX</p>
+                                <p class="member-description">
+                                    Univerisade Federal de São Paulo - UNIFESP
+                                </p>
+                                <div class="member-contact">
+                                    <div class="member-social">
+                                        <a href="mailto:leticia.franca@unifesp.br" target="_blank"><i class="fas fa-envelope"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <!-- Membro 8 -->
+                        <div class="team-member" data-team="graduandos-bolsistas">
+                            <div class="member-photo">
+                                <img src="./image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">Luiza Dugois</h3>
+                                <p class="member-role">Graduando Bolsista IEX</p>
+                                <p class="member-description">
+                                    Univerisade Federal de São Paulo - UNIFESP
+                                </p>
+                                <div class="member-contact">
+                                    <div class="member-social">
+                                        <a href="mailto:luiza.dugois@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <!-- Membro 9 -->
+                        <div class="team-member" data-team="graduandos-bolsistas">
+                            <div class="member-photo">
+                                <img src="./image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">Raisa Serio</h3>
+                                <p class="member-role">Graduando Bolsista IEX</p>
+                                <p class="member-description">
+                                    Univerisade Federal de São Paulo - UNIFESP
+                                </p>
+                                <div class="member-contact">
+                                    <div class="member-social">
+                                        <a href="mailto:raisa.serio@unifesp.br" target="_blank"><i class="fas fa-envelope"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="team-member" data-team="escolas-municipais" data-school="EEMIFI Mario XXIII">
+                        <div class="member-photo">
+                                <img src="./image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">Matheus Santos </h3>
+                                <p class="member-role">Aluno do Ensino Médio</p>
+                                <p class="member-description">
+                                    Envolvido no projeto XXX.
+                                </p>
+                                <div class="member-contact">
+                                    <div class="member-social">
+                                        <a href="mailto:raisa.serio@unifesp.br" target="_blank"><i class="fas fa-envelope"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div
+                        </div>
+
+                    
+
+                        <div class="team-member" data-team="escolas-estaduais" data-school="EE Prof. Maria Silva">
+                        <div class="member-photo">
+                                <img src="./image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">Nome e sobrenome</h3>
+                                <p class="member-role">Aluno do 2° ano do Ensino Médio.</p>
+                                <p class="member-description">
+                                    Envolvido no projeto XXX.
+                                </p>
+                                <div class="member-contact">
+                                    <div class="member-social">
+                                        <a href="mailto:raisa.serio@unifesp.br" target="_blank"><i class="fas fa-envelope"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="team-member" data-team="escolas-estaduais" data-school="EE João XXIII">
+                            <div class="member-photo">
+                                    <img src="./image/Albert_Einstein_1947.jpg" alt="Nome Sobrenome" class="member-image">
+                                </div>
+                                <div class="member-info">
+                                    <h3 class="member-name">Nome Sobrenome</h3>
+                                    <p class="member-role">Aluno do 3° ano do Ensino Médio.</p>
+                                    <p class="member-description">
+                                        Envolvido no projeto XXX.
+                                    </p>
+                                    <div class="member-contact">
+                                        <div class="member-social">
+                                            <a href="mailto:raisa.serio@unifesp.br" target="_blank"><i class="fas fa-envelope"></i></a>
+                                            
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        
+
+
+                    
                         
                     </div>
                 </div>
@@ -286,10 +423,11 @@
                         <li><a href="index.html">Início</a></li>
                         <li><a href="equipe.html">Equipe</a></li>
                         <li><a href="eventos.html">Eventos</a></li>
-                        <li><a href="recursos.html">Recursos</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="https://drive.google.com/drive/folders/1B9byN7bWkLxWpOd9EuPeVwH3V4CEs85n?usp=sharing" target="_blank">Recursos</a></li>
+                        <li><a href="https://maiscienciasjc.blogspot.com/" target="_blank">Blog</a></li>
                     </ul>
                 </div>
+
 
 
                 <div class="footer-section">

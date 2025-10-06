@@ -117,3 +117,145 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+(function () {
+  const filterBar = document.querySelector('.team-filters');
+  if (!filterBar) return;
+
+  const buttons = Array.from(filterBar.querySelectorAll('.filter-btn'));
+  const grid = document.querySelector('.team-grid');
+  const members = Array.from(document.querySelectorAll('.team-member'));
+
+  // Container da visão agrupada por escola
+  const groupedContainer = document.createElement('div');
+  groupedContainer.className = 'team-grouped hidden';
+  grid.parentElement.insertBefore(groupedContainer, grid.nextSibling);
+
+  const SPECIAL_GROUPED = new Set(['escolas-estaduais', 'escolas-municipais']);
+
+  function setActiveButton(filter) {
+    buttons.forEach(btn => {
+      const active = btn.dataset.filter === filter || (filter === '*' && btn.dataset.filter === '*');
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  }
+
+  const normalize = (str) => (str || '').trim().toLowerCase();
+
+  function renderGroupedBySchool(list) {
+    groupedContainer.innerHTML = '';
+
+    const map = new Map();
+    list.forEach(card => {
+      const school = card.getAttribute('data-school') || '— Sem escola definida —';
+      if (!map.has(school)) map.set(school, []);
+      map.get(school).push(card);
+    });
+
+    [...map.keys()].sort((a, b) => a.localeCompare(b)).forEach(schoolName => {
+      const section = document.createElement('section');
+      section.className = 'school-section';
+
+      const h = document.createElement('h2');
+      h.className = 'school-title';
+      h.textContent = schoolName;
+      section.appendChild(h);
+
+      const gridWrap = document.createElement('div');
+      gridWrap.className = 'school-grid';
+
+      map.get(schoolName).forEach(card => {
+        const clone = card.cloneNode(true);
+        clone.hidden = false;
+        gridWrap.appendChild(clone);
+      });
+
+      section.appendChild(gridWrap);
+      groupedContainer.appendChild(section);
+    });
+  }
+
+  function filterListByTeam(filter) {
+    return members.filter(card => {
+      const teams = (card.dataset.team || '')
+        .split(',')
+        .map(normalize)
+        .filter(Boolean);
+      return teams.includes(filter);
+    });
+  }
+
+  function applyFilter(filter) {
+    setActiveButton(filter);
+
+    // Todos
+    if (filter === '*') {
+      members.forEach(c => { c.hidden = false; });
+      groupedContainer.classList.add('hidden');
+      grid.classList.remove('hidden');
+      return;
+    }
+
+    // Filtros especiais (agrupados por escola)
+    if (SPECIAL_GROUPED.has(filter)) {
+      const filtered = filterListByTeam(filter);
+      renderGroupedBySchool(filtered);
+      grid.classList.add('hidden');
+      groupedContainer.classList.remove('hidden');
+      return;
+    }
+
+    // Demais filtros (hide/show no grid original)
+    groupedContainer.classList.add('hidden');
+    grid.classList.remove('hidden');
+
+    members.forEach(card => {
+      const teams = (card.dataset.team || '')
+        .split(',')
+        .map(normalize)
+        .filter(Boolean);
+      card.hidden = !teams.includes(filter);
+    });
+  }
+
+  // Clique nos botões
+  filterBar.addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+
+    const current = buttons.find(b => b.classList.contains('is-active'))?.dataset.filter || '*';
+    const next = (btn.dataset.filter === current) ? '*' : btn.dataset.filter;
+    applyFilter(next);
+  });
+
+  // Hash opcional (#dev, #escolas-estaduais, #escolas-municipais, etc.)
+  if (location.hash) {
+    const hashFilter = location.hash.replace('#', '').toLowerCase();
+    const exists = buttons.some(b => b.dataset.filter === hashFilter);
+    if (exists) applyFilter(hashFilter); else applyFilter('*');
+  } else {
+    applyFilter('*');
+  }
+})();
+
+
+const CAL_ID = "c_0cdb52a96ccdd2b7c27fa98583e98e7052d219211486d5acdd5275da0d161781@group.calendar.google.com";
+
+  // Gera link estável de impressão e abre em nova aba
+  function baixarAgendaPDF(dias = 90) {
+    const hoje = new Date();
+    const fim = new Date();
+    fim.setDate(fim.getDate() + dias);
+
+    const fmt = d => d.toISOString().slice(0,10).replace(/-/g, ""); // YYYYMMDD
+
+    const url = new URL("https://calendar.google.com/calendar/print");
+    url.searchParams.set("mode", "AGENDA");                       // ou MONTH, WEEK, DAY
+    url.searchParams.set("hl", "pt_BR");
+    url.searchParams.set("ctz", "America/Sao_Paulo");
+    url.searchParams.set("dates", `${fmt(hoje)}/${fmt(fim)}`);    // intervalo
+    url.searchParams.append("src", CAL_ID);                       // pode repetir src p/ múltiplos cals
+
+    window.open(url.toString(), "_blank", "noopener");
+  }

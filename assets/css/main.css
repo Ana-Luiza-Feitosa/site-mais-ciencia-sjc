@@ -466,72 +466,132 @@ html, body { height: 100%; margin: 0; }
 
 
 
-/*Parceiros*/
-.parceiros-section{
+/*------------PARCEIROS----------------*/
+/* INSTITUIÇÕES PARCEIRAS */
+.parceiros-section {
     background-color: var(--emerald_70);
-    padding: 2rem 0;
+    padding: 4rem 0;
     margin: 0;
-    justify-content: center;
+}
+
+.parceiros-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
 }
 
 .parceiros-titulo {
-   color: var(--emerald);
-   font-weight: 600;
-   margin-bottom: 2rem;
-   letter-spacing: 1px;
-   text-align: center;
-   font-size: 25px;
-}
-
-
-parceiros-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    color: var(--white);
+    font-weight: 700;
+    font-size: var(--fs-1);
+    margin-bottom: 3rem;
+    letter-spacing: 0.5px;
     text-align: center;
 }
 
 .parceiros-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
     justify-items: center;
-    padding: 0 2rem;
 }
-
 
 .parceiro-logo {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 50px;
     transition: all 0.3s ease;
     width: 100%;
-    min-height: 80px;
+    min-height: 90px;
     background-color: var(--white_25);
-    border-radius: 50px;
+    border: 3px solid transparent;
 }
 
 .parceiro-logo:hover {
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    background-color: var(--white);
+    border-color: var(--emerald);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .logo-img {
-    max-width: 120px;
-    max-height: 60px;
+    max-width: 140px;
+    max-height: 70px;
     object-fit: contain;
     opacity: 0.9;
+    transition: opacity 0.3s ease;
 }
 
 .parceiro-logo:hover .logo-img {
     opacity: 1;
 }
 
+/* RESPONSIVO - PARCEIROS */
+@media (max-width: 768px) {
+    .parceiros-section {
+        padding: 3rem 0;
+    }
 
-/* FOOTER */
-/* FOOTER */
+    .parceiros-container {
+        padding: 0 30px;
+    }
+
+    .parceiros-titulo {
+        font-size: var(--fs-1);
+        margin-bottom: 2.5rem;
+    }
+
+    .parceiros-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .parceiro-logo {
+        min-height: 80px;
+        padding: 0.875rem;
+    }
+
+    .logo-img {
+        max-width: 120px;
+        max-height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .parceiros-section {
+        padding: 2.5rem 0;
+    }
+
+    .parceiros-container {
+        padding: 0 20px;
+    }
+
+    .parceiros-titulo {
+        font-size: var(--fs-4);
+        margin-bottom: 2rem;
+    }
+
+    .parceiros-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .parceiro-logo {
+        min-height: 75px;
+        padding: 0.75rem;
+    }
+
+    .logo-img {
+        max-width: 110px;
+        max-height: 55px;
+    }
+}
+
+
+/*------------------ FOOTER ----------------*/
 .footer {
     background: var(--eerie-black);
     color: var(--white);

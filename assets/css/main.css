@@ -400,6 +400,7 @@ html, body { height: 100%; margin: 0; }
 .hero-title .highlight {
     color: var(--emerald);
     white-space: nowrap;
+    display: inline-block;
 }
 
 .hero-description {

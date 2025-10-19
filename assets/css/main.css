@@ -1216,7 +1216,7 @@ html, body { height: 100%; margin: 0; }
 .nav-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald_70) 100%);
+    background:  var(--emerald);
     border-radius: 50%;
     display: flex;
     align-items: center;

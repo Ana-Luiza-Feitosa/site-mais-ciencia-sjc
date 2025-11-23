@@ -263,8 +263,58 @@ body{
   }
 
   .navbar-link:hover {
-    
     color: var(--emerald);
+  }
+
+  /* SUBMENU MOBILE */
+  .has-submenu {
+    position: relative;
+  }
+
+  .submenu-toggle {
+    background: none;
+    border: none;
+    font-size: var(--fs-6);
+    color: var(--black);
+    font-weight: var(--fw-600);
+    padding: 10px 15px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: var(--transition-2);
+  }
+
+  .submenu-toggle:hover {
+    color: var(--emerald);
+  }
+
+  .submenu {
+    display: none;
+    flex-direction: column;
+    padding-left: 20px;
+    margin-top: 5px;
+    font-weight: var(--fw-600);
+  }
+
+  .submenu a {
+    padding: 8px 15px;
+    font-size: var(--fs-7);
+    color: var(--black_70);
+    border-radius: 6px;
+    transition: var(--transition-2);
+  }
+
+  .submenu a:hover {
+    color: var(--emerald);
+  }
+
+  /* QUANDO ATIVO NO MOBILE */
+  .has-submenu.active .submenu {
+    display: flex;
   }
 }
 
@@ -287,6 +337,7 @@ body{
     background: transparent;
     box-shadow: none;
     padding: 0;
+    height: auto;
   }
 
   .navbar-list {
@@ -330,6 +381,74 @@ body{
     padding: 0;
     margin: 0;
     align-items: center;
+  }
+
+  /* SUBMENU DESKTOP */
+  .has-submenu {
+    position: relative;
+  }
+
+  .submenu-toggle {
+    background: none;
+    border: none;
+    font-size: var(--fs-6);
+    color: var(--black);
+    font-weight: var(--fw-600);
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: var(--transition-2);
+  }
+
+  .submenu-toggle:hover {
+    background-color: var(--emerald_70);
+    color: var(--white);
+  }
+
+  .submenu-toggle ion-icon {
+    font-size: 1.2rem;
+  }
+
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    padding: 10px 0;
+    min-width: 180px;
+    box-shadow: 12px 20px 20px 12px hsla(0, 0%, 0%, 0.2);;
+    border-radius: 20px;
+    margin-top: 5px;
+    z-index: 100;
+    font-weight: var(--fw-600);
+  }
+
+  .submenu a {
+    display: block;
+    padding: 10px 20px;
+    white-space: nowrap;
+    color: var(--black);
+    font-size: var(--fs-7);
+    transition: var(--transition-2);
+  }
+
+  .submenu a:hover {
+    background-color: var(--emerald_10);
+    color: var(--emerald);
+  }
+
+  /* MOSTRAR SUBMENU NO HOVER */
+  .has-submenu:hover .submenu {
+    display: block;
+  }
+
+  /* MOSTRAR SUBMENU NO CLICK (classe active) */
+  .has-submenu.active .submenu {
+    display: block;
   }
 }
 

@@ -19,6 +19,71 @@ const normalize = e => { if (e.matches) navbar.classList.remove('active'); };
 mql.addEventListener('change', normalize);
 normalize(mql);
 
+// Funcionalidade do submenu (mobile e desktop)
+document.addEventListener('DOMContentLoaded', function() {
+    const submenuToggles = document.querySelectorAll('.submenu-toggle');
+    const hasSubmenuItems = document.querySelectorAll('.has-submenu');
+    
+    // Toggle do submenu ao clicar no botão
+    submenuToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation(); // Previne que o click chegue ao document
+            
+            const parent = this.closest('.has-submenu');
+            
+            // Fecha outros submenus abertos
+            hasSubmenuItems.forEach(item => {
+                if (item !== parent) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Toggle no submenu atual
+            parent.classList.toggle('active');
+        });
+    });
+    
+    // Fechar submenu ao clicar fora
+    document.addEventListener('click', function(e) {
+        // Verifica se o clique foi fora de qualquer .has-submenu
+        if (!e.target.closest('.has-submenu')) {
+            hasSubmenuItems.forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+    });
+    
+    // Fechar submenu ao clicar em um link do submenu
+    const submenuLinks = document.querySelectorAll('.submenu a');
+    submenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            hasSubmenuItems.forEach(item => {
+                item.classList.remove('active');
+            });
+        });
+    });
+    
+    // No desktop, remover a classe active ao tirar o mouse (opcional)
+    if (window.innerWidth >= 992) {
+        hasSubmenuItems.forEach(item => {
+            item.addEventListener('mouseleave', function() {
+                this.classList.remove('active');
+            });
+        });
+    }
+    
+    // Atualizar comportamento ao redimensionar a janela
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 992) {
+            hasSubmenuItems.forEach(item => {
+                item.addEventListener('mouseleave', function() {
+                    this.classList.remove('active');
+                });
+            });
+        }
+    });
+});
 
 
 //MAPA

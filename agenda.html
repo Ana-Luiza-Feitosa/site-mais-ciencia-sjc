@@ -39,36 +39,44 @@
         </h1>
 
         <nav class="navbar" data-navbar>
-            <button class="nav-close-btn" aria-label="Fechar Menu" data-nav-close-btn> 
-                <ion-icon name="close-outline"></ion-icon>
-            </button>
-            
-            <ul class="navbar-list">
-                <li>
-                       <a href="index.html" class="navbar-link">Início</a>
-                </li>
-                
-                <li>
-                       <a href="agenda.html" class="navbar-link">Agenda</a>
-                </li>
+                    <button class="nav-close-btn" aria-label="Fechar Menu" data-nav-close-btn> 
+                        <ion-icon name="close-outline"></ion-icon>
+                    </button>
+                    
+                    <ul class="navbar-list">
+                        <li>
+                            <a href="index.html" class="navbar-link">Início</a>
+                        </li>
+                        
+                        <li>
+                            <a href="agenda.html" class="navbar-link">Agenda</a>
+                        </li>
 
-                <li>
-                       <a href="eventos.html" class="navbar-link">Eventos</a>
-                </li>
+                        <li>
+                            <a href="eventos.html" class="navbar-link">Eventos</a>
+                        </li>
 
-                <li>
-                       <a href="https://drive.google.com/drive/folders/1dv8TPYJplEJSMFyHpmC-crtmgFohul8z?usp=sharing" class="navbar-link" target="_blank">Recursos</a>
-                </li>
+                         <!-- ITEM COM SUBMENU -->
+                        <li class="has-submenu">
+                            <button class="navbar-link submenu-toggle">
+                                Recursos <ion-icon name="chevron-down-outline"></ion-icon>
+                            </button>
 
-                <li>
-                       <a href="https://maiscienciasjc.blogspot.com/" class="navbar-link" target="_blank">Blog</a>
-                </li>
+                            <ul class="submenu">
+                                <li><a href="https://drive.google.com/drive/folders/1dv8TPYJplEJSMFyHpmC-crtmgFohul8z" target="_blank">Material Didático Livre</a></li>
+                                <li><a href="https://pensamentocomputacional.wmstecnologia.com.br/" target="_blank">Pensamento Computacional</a></li>
+                            </ul>
+                        </li>
 
-                <li>
-                       <a href="equipe.html" class="navbar-link">Equipe</a>
-                </li>
-            </ul>
-        </nav>
+                        <li>
+                            <a href="https://maiscienciasjc.blogspot.com/" class="navbar-link" target="_blank">Blog</a>
+                        </li>
+
+                        <li>
+                            <a href="equipe.html" class="navbar-link">Equipe</a>
+                        </li>
+                    </ul>
+                </nav>
 
         <div class="header-action">
             <!--Menu Oculto-->

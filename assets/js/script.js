@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const submenuToggles = document.querySelectorAll('.submenu-toggle');
     const hasSubmenuItems = document.querySelectorAll('.has-submenu');
     
-    // Toggle do submenu ao clicar no botão
+    // Toggle do submenu ao clicar no botão (mobile)
     submenuToggles.forEach(toggle => {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
-            e.stopPropagation(); // Previne que o click chegue ao document
+            e.stopPropagation();
             
             const parent = this.closest('.has-submenu');
             
@@ -44,9 +44,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Comportamento de hover para desktop
+    function setupDesktopHover() {
+        if (window.innerWidth >= 992) {
+            hasSubmenuItems.forEach(item => {
+                let hoverTimeout;
+                
+                // Mostrar submenu ao passar o mouse
+                item.addEventListener('mouseenter', function() {
+                    clearTimeout(hoverTimeout);
+                    this.classList.add('active');
+                });
+                
+                // Esconder submenu com delay ao tirar o mouse
+                item.addEventListener('mouseleave', function() {
+                    const self = this;
+                    hoverTimeout = setTimeout(function() {
+                        self.classList.remove('active');
+                    }, 200); // Delay de 200ms para dar tempo de mover o mouse
+                });
+            });
+        }
+    }
+    
     // Fechar submenu ao clicar fora
     document.addEventListener('click', function(e) {
-        // Verifica se o clique foi fora de qualquer .has-submenu
         if (!e.target.closest('.has-submenu')) {
             hasSubmenuItems.forEach(item => {
                 item.classList.remove('active');
@@ -64,28 +86,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // No desktop, remover a classe active ao tirar o mouse (opcional)
-    if (window.innerWidth >= 992) {
-        hasSubmenuItems.forEach(item => {
-            item.addEventListener('mouseleave', function() {
-                this.classList.remove('active');
-            });
-        });
-    }
+    // Inicializar comportamento desktop
+    setupDesktopHover();
     
     // Atualizar comportamento ao redimensionar a janela
+    let resizeTimeout;
     window.addEventListener('resize', function() {
-        if (window.innerWidth >= 992) {
-            hasSubmenuItems.forEach(item => {
-                item.addEventListener('mouseleave', function() {
-                    this.classList.remove('active');
-                });
-            });
-        }
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            // Remove todos os event listeners antigos e recria
+            setupDesktopHover();
+        }, 250);
     });
 });
-
-
 //MAPA
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -599,6 +599,13 @@ html, body { height: 100%; margin: 0; }
     object-fit: cover;
 }
 
+.evento-image-2 {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center;
+}
+
 .evento-content {
     padding: 25px;
 }

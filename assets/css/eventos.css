@@ -634,6 +634,7 @@ html, body { height: 100%; margin: 0; }
     font-size: 1.5rem;
     line-height: 1.6;
     margin-bottom: 20px;
+    text-align: justify;
 }
 .tab {
     display: inline-block;
